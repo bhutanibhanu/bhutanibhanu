@@ -135,12 +135,18 @@ def test_local_images_exist():
 
 
 def test_anchor_links_resolve():
+    # GitHub prefixes heading ids with "user-content-". On a repo page its JS maps
+    # "#slug" to that id, but the profile page doesn't, so links name the real id.
     slugs = set(_headings(README))
     links = re.findall(r"\]\(#([^)]+)\)", README) + re.findall(
         r'href="#([^"]+)"', README
     )
     assert links
-    missing = sorted(set(links) - slugs)
+    unprefixed = sorted(link for link in links if not link.startswith("user-content-"))
+    assert not unprefixed, (
+        f"use #user-content-<slug> so links work on the profile page: {unprefixed}"
+    )
+    missing = sorted({link.removeprefix("user-content-") for link in links} - slugs)
     assert not missing, f"anchors with no matching heading: {missing}"
 
 

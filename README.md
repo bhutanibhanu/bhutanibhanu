@@ -11,14 +11,14 @@ This page works like my lab notebook. Each project gets an entry with the questi
 
 | No. | Project | Headline |
 |:--|:--|:--|
-| [01](#exp-01--instant-notes) | Hotkey voice notes for macOS | Wait after you stop talking: 79&nbsp;s to 78&nbsp;ms |
-| [02](#exp-02--claude-code-from-a-phone) | Claude Code from a phone, over Telegram | 1,509 tests, more test code than source |
-| [03](#exp-03--readmission-risk-at-abacus-health) | Hospitalization and readmission risk (internship) | A 16-way resampling experiment, validation kept clean |
-| [04](#exp-04--fraud-at-0172) | Credit-card fraud at 0.172% positives | AUPRC above 0.90 |
-| [05](#exp-05--animal-re-identification) | Telling individual animals apart | Recall@K and mAP on an unseen species |
-| [06](#exp-06--a-pipeline-for-coding-agents) | An approval-gated pipeline for coding agents | 10 skills, used every day |
+| [01](#user-content-exp-01--instant-notes) | Hotkey voice notes for macOS | Wait after you stop talking: 79&nbsp;s to 78&nbsp;ms |
+| [02](#user-content-exp-02--claude-code-from-a-phone) | Claude Code from a phone, over Telegram | 1,509 tests, more test code than source |
+| [03](#user-content-exp-03--readmission-risk-at-abacus-health) | Hospitalization and readmission risk (internship) | A 16-way resampling experiment, validation kept clean |
+| [04](#user-content-exp-04--fraud-at-0172) | Credit-card fraud at 0.172% positives | AUPRC above 0.90 |
+| [05](#user-content-exp-05--animal-re-identification) | Telling individual animals apart | Recall@K and mAP on an unseen species |
+| [06](#user-content-exp-06--a-pipeline-for-coding-agents) | An approval-gated pipeline for coding agents | 10 skills, used every day |
 
-Also in here: [on the bench](#on-the-bench) · [field notes](#field-notes) · [methods I trust](#methods-i-trust) · [timeline](#timeline) · [currently curious about](#currently-curious-about)
+Also in here: [on the bench](#user-content-on-the-bench) · [field notes](#user-content-field-notes) · [methods I trust](#user-content-methods-i-trust) · [timeline](#user-content-timeline) · [currently curious about](#user-content-currently-curious-about)
 
 ## Entries
 
@@ -181,23 +181,23 @@ Also in here: [on the bench](#on-the-bench) · [field notes](#field-notes) · [m
 
 Things the entries above taught me, mostly the hard way:
 
-1. Resample the training split and leave validation alone, or you end up measuring the sampler. ([EXP-03](#exp-03--readmission-risk-at-abacus-health))
-2. On imbalanced data accuracy flatters you. At 0.172% positives, never flagging anything scores 99.8%. ([EXP-04](#exp-04--fraud-at-0172))
-3. A CSV round-trip can quietly change your features. I keep data in Parquet now and run data-quality checks on load. ([EXP-03](#exp-03--readmission-risk-at-abacus-health))
-4. Once the model is fast, look for work you can start earlier. Streaming got Instant Notes its last 10×. ([EXP-01](#exp-01--instant-notes))
-5. When an agent writes the code, the tests are the spec. ([EXP-02](#exp-02--claude-code-from-a-phone))
+1. Resample the training split and leave validation alone, or you end up measuring the sampler. ([EXP-03](#user-content-exp-03--readmission-risk-at-abacus-health))
+2. On imbalanced data accuracy flatters you. At 0.172% positives, never flagging anything scores 99.8%. ([EXP-04](#user-content-exp-04--fraud-at-0172))
+3. A CSV round-trip can quietly change your features. I keep data in Parquet now and run data-quality checks on load. ([EXP-03](#user-content-exp-03--readmission-risk-at-abacus-health))
+4. Once the model is fast, look for work you can start earlier. Streaming got Instant Notes its last 10×. ([EXP-01](#user-content-exp-01--instant-notes))
+5. When an agent writes the code, the tests are the spec. ([EXP-02](#user-content-exp-02--claude-code-from-a-phone))
 
 ## Methods I trust
 
 | Area | Tools | Used in |
 |:--|:--|:--|
-| Evaluation | AUPRC, Recall@K, mAP, WER, probability calibration, FAR/FRR | [01](#exp-01--instant-notes) · [03](#exp-03--readmission-risk-at-abacus-health) · [04](#exp-04--fraud-at-0172) · [05](#exp-05--animal-re-identification) |
-| Modeling | PyTorch, scikit-learn, XGBoost, timm, TabNet | [03](#exp-03--readmission-risk-at-abacus-health) · [04](#exp-04--fraud-at-0172) · [05](#exp-05--animal-re-identification) |
-| Metric learning | ArcFace, triplet loss, HDBSCAN, K-Means | [05](#exp-05--animal-re-identification) |
-| LLMs and agents | Claude Agent SDK, tool use, prompt design, LLM routing and cleanup | [01](#exp-01--instant-notes) · [02](#exp-02--claude-code-from-a-phone) · [06](#exp-06--a-pipeline-for-coding-agents) |
-| Speech | faster-whisper, Groq Whisper, Deepgram, Sarvam | [01](#exp-01--instant-notes) |
-| Data | Python, SQL, SQL Server, SQLite FTS5, Parquet | [01](#exp-01--instant-notes) · [03](#exp-03--readmission-risk-at-abacus-health) |
-| Engineering | Git, CI, pytest, ADRs | [01](#exp-01--instant-notes) · [02](#exp-02--claude-code-from-a-phone) · [06](#exp-06--a-pipeline-for-coding-agents) |
+| Evaluation | AUPRC, Recall@K, mAP, WER, probability calibration, FAR/FRR | [01](#user-content-exp-01--instant-notes) · [03](#user-content-exp-03--readmission-risk-at-abacus-health) · [04](#user-content-exp-04--fraud-at-0172) · [05](#user-content-exp-05--animal-re-identification) |
+| Modeling | PyTorch, scikit-learn, XGBoost, timm, TabNet | [03](#user-content-exp-03--readmission-risk-at-abacus-health) · [04](#user-content-exp-04--fraud-at-0172) · [05](#user-content-exp-05--animal-re-identification) |
+| Metric learning | ArcFace, triplet loss, HDBSCAN, K-Means | [05](#user-content-exp-05--animal-re-identification) |
+| LLMs and agents | Claude Agent SDK, tool use, prompt design, LLM routing and cleanup | [01](#user-content-exp-01--instant-notes) · [02](#user-content-exp-02--claude-code-from-a-phone) · [06](#user-content-exp-06--a-pipeline-for-coding-agents) |
+| Speech | faster-whisper, Groq Whisper, Deepgram, Sarvam | [01](#user-content-exp-01--instant-notes) |
+| Data | Python, SQL, SQL Server, SQLite FTS5, Parquet | [01](#user-content-exp-01--instant-notes) · [03](#user-content-exp-03--readmission-risk-at-abacus-health) |
+| Engineering | Git, CI, pytest, ADRs | [01](#user-content-exp-01--instant-notes) · [02](#user-content-exp-02--claude-code-from-a-phone) · [06](#user-content-exp-06--a-pipeline-for-coding-agents) |
 | Also | FAISS, RAG, fine-tuning, Hugging Face, PostgreSQL, FastAPI, Node.js, React, Docker, C++ | |
 
 ## Timeline
@@ -205,7 +205,7 @@ Things the entries above taught me, mostly the hard way:
 | When | What |
 |:--|:--|
 | Dec 2026 | M.S. Artificial Intelligence, Northeastern University, Khoury College of Computer Sciences (Roux Institute), expected |
-| Sep to Dec 2025 | Machine Learning Intern, Abacus Health Solutions ([EXP-03](#exp-03--readmission-risk-at-abacus-health)) |
+| Sep to Dec 2025 | Machine Learning Intern, Abacus Health Solutions ([EXP-03](#user-content-exp-03--readmission-risk-at-abacus-health)) |
 | 2024 | First place, Pine Tree Hackathon Challenge, Roux Institute |
 | 2023 to 2024 | Associate Software Developer, Poetistic. REST APIs and full-stack features in Node.js, React, and MongoDB, plus content pipelines and recommendation work |
 | 2023 | B.Tech Computer Science and Engineering, Kurukshetra University |
