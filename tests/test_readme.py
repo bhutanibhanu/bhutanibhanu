@@ -175,3 +175,30 @@ def test_pipeline_notes_stay_out_of_the_public_repo():
     assert "docs/features/" not in tracked, (
         "planning notes are private; keep docs/features/ gitignored"
     )
+
+
+PHONE_CONTENT_PX = 358  # a 390 px phone minus GitHub's 16 px side padding
+MIN_TEXT_PX = 9
+DECORATIVE = {
+    "label",
+    "page",
+}  # "LAB NOTEBOOK", "No. 01", "p. 01": ornament, not content
+
+
+def test_svg_text_is_legible_on_a_phone():
+    for block in re.findall(r"<picture>.*?</picture>", README, re.DOTALL):
+        img = re.search(r'<img[^>]*\bsrc="([^"]+)"[^>]*\bwidth="([^"]+)"', block)
+        assert img, f"every chart needs an explicit width: {block}"
+        src, width = img.groups()
+        shown = (
+            PHONE_CONTENT_PX if width == "100%" else min(int(width), PHONE_CONTENT_PX)
+        )
+        svg = (ROOT / src).read_text(encoding="utf-8")
+        view_w = float(re.search(r'viewBox="0 0 ([\d.]+) ', svg).group(1))
+        sizes = re.findall(r"\.([\w-]+) \{[^}]*?font-size: ([\d.]+)px", svg)
+        assert sizes, src
+        for cls, size in sizes:
+            if cls in DECORATIVE:
+                continue
+            px = float(size) * shown / view_w
+            assert px >= MIN_TEXT_PX, f"{src} .{cls} renders at {px:.1f}px on a phone"

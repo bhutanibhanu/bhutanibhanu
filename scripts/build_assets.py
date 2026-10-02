@@ -91,55 +91,59 @@ def _fonts() -> str:
 
 
 def cover(p: dict[str, str]) -> str:
-    w, h = 1200, 390
+    # 800 wide, not 1200: on a 390 px phone the content column is ~358 px, so every
+    # essential line still lands at 9 px or more (tests/test_readme.py checks this).
+    w, h = 800, 440
     style = (
         _fonts()
         + f"""
-.label {{ font-size: 18px; letter-spacing: 4px; fill: {p["ink2"]}; }}
-.page {{ font-size: 18px; fill: {p["pencil"]}; }}
-.name {{ font-size: 86px; font-weight: 700; fill: {p["ink"]}; }}
-.program {{ font-size: 36px; font-style: italic; fill: {p["ink"]}; }}
-.thesis {{ font-size: 26px; fill: {p["ink2"]}; }}
+.label {{ font-size: 16px; letter-spacing: 3px; fill: {p["ink2"]}; }}
+.page {{ font-size: 16px; fill: {p["pencil"]}; }}
+.name {{ font-size: 68px; font-weight: 700; fill: {p["ink"]}; }}
+.program {{ font-size: 27px; font-style: italic; fill: {p["ink"]}; }}
+.thesis {{ font-size: 22px; fill: {p["ink2"]}; }}
 .prompt {{ fill: {p["accent"]}; }}
-.stamp-big {{ font-size: 27px; font-weight: 700; letter-spacing: 3px; fill: {p["stamp"]}; }}
-.stamp-small {{ font-size: 20px; font-weight: 700; letter-spacing: 3px; fill: {p["stamp"]}; }}
+.pencil {{ font-size: 21px; fill: {p["pencil"]}; }}
+.stamp-big {{ font-size: 25px; font-weight: 700; letter-spacing: 2px; fill: {p["stamp"]}; }}
+.stamp-small {{ font-size: 22px; font-weight: 700; letter-spacing: 2px; fill: {p["stamp"]}; }}
 .ink-line {{
-  fill: none; stroke: {p["accent"]}; stroke-width: 5; stroke-linecap: round;
-  stroke-dasharray: 600; stroke-dashoffset: 0;
+  fill: none; stroke: {p["accent"]}; stroke-width: 4.5; stroke-linecap: round;
+  stroke-dasharray: 520; stroke-dashoffset: 0;
   animation: draw 1.6s ease-out 0.3s both;
 }}
-@keyframes draw {{ from {{ stroke-dashoffset: 600; }} to {{ stroke-dashoffset: 0; }} }}
+@keyframes draw {{ from {{ stroke-dashoffset: 520; }} to {{ stroke-dashoffset: 0; }} }}
 @media (prefers-reduced-motion: reduce) {{ .ink-line {{ animation: none; }} }}"""
     )
     holes = "".join(
-        f'<circle cx="58" cy="{y}" r="13" fill="{p["hole"]}" stroke="{p["rule"]}" stroke-width="1.5"/>'
-        for y in (98, 195, 292)
+        f'<circle cx="40" cy="{y}" r="10" fill="{p["hole"]}" stroke="{p["rule"]}" stroke-width="1.5"/>'
+        for y in (110, 220, 330)
     )
     body = f"""<defs>
-  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M24 0H0V24" fill="none" stroke="{p["grid"]}" stroke-width="1"/>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0H0V22" fill="none" stroke="{p["grid"]}" stroke-width="1"/>
   </pattern>
 </defs>
 <rect width="{w}" height="{h}" rx="16" fill="{p["paper"]}"/>
 <rect width="{w}" height="{h}" rx="16" fill="url(#grid)"/>
 <rect x="0.75" y="0.75" width="{w - 1.5}" height="{h - 1.5}" rx="15.5" fill="none" stroke="{p["rule"]}" stroke-width="1.5"/>
-<line x1="116" y1="0" x2="116" y2="{h}" stroke="{p["margin"]}" stroke-width="2" opacity="0.75"/>
-<line x1="121" y1="0" x2="121" y2="{h}" stroke="{p["margin"]}" stroke-width="1" opacity="0.5"/>
+<line x1="78" y1="0" x2="78" y2="{h}" stroke="{p["margin"]}" stroke-width="2" opacity="0.75"/>
+<line x1="82" y1="0" x2="82" y2="{h}" stroke="{p["margin"]}" stroke-width="1" opacity="0.5"/>
 {holes}
-<text x="160" y="74" class="mono label">LAB NOTEBOOK</text>
-<text x="1160" y="74" class="mono page" text-anchor="end">No. 01 · 2026</text>
-<text x="160" y="192" class="serif name">Bhanu Pratap</text>
-<path class="ink-line" d="M164 218 C 300 207, 470 224, 716 209"/>
-<text x="160" y="284" class="serif program">M.S. Artificial Intelligence · Northeastern University</text>
-<text x="160" y="348" class="mono thesis"><tspan class="prompt">&gt;</tspan> I build ML and LLM systems, then measure them.</text>
-<text x="1160" y="366" class="mono page" text-anchor="end">p. 01</text>
-<g transform="rotate(-6 975 165)" opacity="0.88">
-  <rect x="826" y="112" width="298" height="106" rx="10" fill="none" stroke="{p["stamp"]}" stroke-width="4"/>
-  <rect x="835" y="121" width="280" height="88" rx="6" fill="none" stroke="{p["stamp"]}" stroke-width="1.5"/>
-  <text x="975" y="162" class="mono stamp-big" text-anchor="middle">OPEN TO ROLES</text>
-  <text x="975" y="194" class="mono stamp-small" text-anchor="middle">FROM JAN 2027</text>
-</g>"""
-    title = "Lab notebook cover: Bhanu Pratap, M.S. Artificial Intelligence, Northeastern University. Stamped: open to roles from January 2027."
+<text x="110" y="56" class="mono label">LAB NOTEBOOK</text>
+<text x="772" y="56" class="mono page" text-anchor="end">No. 01 · 2026</text>
+<text x="110" y="148" class="serif name">Bhanu Pratap</text>
+<path class="ink-line" d="M114 172 C 230 162, 380 178, 588 164"/>
+<text x="110" y="218" class="serif program">M.S. Artificial Intelligence · Northeastern University</text>
+<text x="110" y="264" class="mono thesis"><tspan class="prompt">&gt;</tspan> I build ML and LLM systems, then measure them.</text>
+<g transform="rotate(-4 250 352)" opacity="0.88">
+  <rect x="110" y="306" width="280" height="92" rx="9" fill="none" stroke="{p["stamp"]}" stroke-width="4"/>
+  <rect x="118" y="314" width="264" height="76" rx="5" fill="none" stroke="{p["stamp"]}" stroke-width="1.5"/>
+  <text x="250" y="346" class="mono stamp-big" text-anchor="middle">OPEN TO ROLES</text>
+  <text x="250" y="378" class="mono stamp-small" text-anchor="middle">FROM JAN 2027</text>
+</g>
+<text x="420" y="360" class="mono pencil">← graduating Dec 2026</text>
+<text x="772" y="418" class="mono page" text-anchor="end">p. 01</text>"""
+    title = "Lab notebook cover: Bhanu Pratap, M.S. Artificial Intelligence, Northeastern University, graduating December 2026. Stamped: open to roles from January 2027."
     return _svg(w, h, title, style, body)
 
 
@@ -147,21 +151,24 @@ def _card(p: dict[str, str], w: int, h: int) -> str:
     """Paper card with two strips of tape: the chart is pasted into the notebook."""
     return f"""<rect width="{w}" height="{h}" rx="14" fill="{p["paper"]}"/>
 <rect x="0.75" y="0.75" width="{w - 1.5}" height="{h - 1.5}" rx="13.25" fill="none" stroke="{p["rule"]}" stroke-width="1.5"/>
-<rect x="18" y="-6" width="92" height="26" fill="{p["tape"]}" opacity="0.8" transform="rotate(-8 64 7)"/>
-<rect x="{w - 110}" y="-6" width="92" height="26" fill="{p["tape"]}" opacity="0.8" transform="rotate(7 {w - 64} 7)"/>"""
+<rect x="16" y="-6" width="74" height="22" fill="{p["tape"]}" opacity="0.8" transform="rotate(-8 53 5)"/>
+<rect x="{w - 90}" y="-6" width="74" height="22" fill="{p["tape"]}" opacity="0.8" transform="rotate(7 {w - 53} 5)"/>"""
 
 
 def _chart_style(p: dict[str, str]) -> str:
+    # Charts are 600 wide and shown at up to 640 px, so on a phone they scale by
+    # about 0.6 and the smallest text (ticks, 16 px) still renders near 9.5 px.
     return (
         _fonts()
         + f"""
-.title {{ font-size: 32px; font-weight: 600; fill: {p["ink"]}; }}
-.sub {{ font-size: 20px; fill: {p["ink2"]}; }}
-.row {{ font-size: 21px; fill: {p["ink"]}; }}
-.tick {{ font-size: 17px; fill: {p["ink2"]}; font-variant-numeric: tabular-nums; }}
-.value {{ font-size: 21px; font-weight: 600; fill: {p["ink"]}; }}
-.note {{ font-size: 19px; fill: {p["ink2"]}; }}
-.hero {{ font-size: 48px; font-weight: 600; fill: {p["ink"]}; }}"""
+.title {{ font-size: 28px; font-weight: 600; fill: {p["ink"]}; }}
+.sub {{ font-size: 17px; fill: {p["ink2"]}; }}
+.row {{ font-size: 18px; fill: {p["ink"]}; }}
+.tick {{ font-size: 16px; fill: {p["ink2"]}; font-variant-numeric: tabular-nums; }}
+.value {{ font-size: 19px; font-weight: 600; fill: {p["ink"]}; }}
+.note {{ font-size: 18px; font-weight: 400; fill: {p["ink2"]}; }}
+.hero {{ font-size: 40px; font-weight: 600; fill: {p["ink"]}; }}
+.caption {{ font-size: 17px; fill: {p["ink2"]}; }}"""
     )
 
 
@@ -185,8 +192,8 @@ def _check_domain(values: list[float], lo: float, hi: float, chart: str) -> None
 
 
 def latency_chart(p: dict[str, str]) -> str:
-    w, h = 960, 350
-    x0, x1 = 350, 920
+    w, h = 600, 330
+    x0, x1 = 44, 566
     lo, hi = -2, 2  # log10 seconds: 10 ms .. 100 s
 
     _check_domain([s for _, s, _ in LATENCY], 10.0**lo, 10.0**hi, "exp01-latency")
@@ -196,45 +203,45 @@ def latency_chart(p: dict[str, str]) -> str:
 
     parts = [_card(p, w, h)]
     parts.append(
-        '<text x="40" y="62" class="sans title">Wait after you stop talking</text>'
+        '<text x="28" y="48" class="sans title">Wait after you stop talking</text>'
     )
     parts.append(
-        '<text x="40" y="96" class="sans sub">Instant Notes · hotkey released → text on screen · log scale, lower is better</text>'
+        '<text x="28" y="76" class="sans sub">Instant Notes · log scale, lower is better</text>'
     )
     for exp, label in zip(
         range(lo, hi + 1), ["10 ms", "100 ms", "1 s", "10 s", "100 s"]
     ):
         gx = _fmt(x(10.0**exp))
         parts.append(
-            f'<line x1="{gx}" y1="128" x2="{gx}" y2="292" stroke="{p["grid"]}" stroke-width="1"/>'
+            f'<line x1="{gx}" y1="96" x2="{gx}" y2="282" stroke="{p["grid"]}" stroke-width="1"/>'
         )
         parts.append(
-            f'<text x="{gx}" y="322" class="mono tick" text-anchor="middle">{label}</text>'
+            f'<text x="{gx}" y="308" class="mono tick" text-anchor="middle">{label}</text>'
         )
+    # Each row's label sits above its track, so the axis gets the full card width.
     for i, (row, seconds, value) in enumerate(LATENCY):
-        cy = 158 + i * 52
+        label_y = 116 + i * 60
+        cy = label_y + 24
         cx = x(seconds)
         last = i == len(LATENCY) - 1
         fill = p["accent"] if last else p["muted"]
+        parts.append(f'<text x="{x0}" y="{label_y}" class="sans row">{row}</text>')
         parts.append(
-            f'<text x="330" y="{cy + 7}" class="sans row" text-anchor="end">{row}</text>'
+            f'<circle cx="{_fmt(cx)}" cy="{cy}" r="7" fill="{fill}" stroke="{p["paper"]}" stroke-width="2.5"/>'
         )
-        parts.append(
-            f'<circle cx="{_fmt(cx)}" cy="{cy}" r="8" fill="{fill}" stroke="{p["paper"]}" stroke-width="2.5"/>'
-        )
-        if cx + 90 > w - 20:
+        if cx + 80 > w - 16:
             parts.append(
-                f'<text x="{_fmt(cx - 18)}" y="{cy + 7}" class="sans value" text-anchor="end">{value}</text>'
+                f'<text x="{_fmt(cx - 16)}" y="{cy + 6}" class="sans value" text-anchor="end">{value}</text>'
             )
         elif last:
             ratio = _one_sig_fig(LATENCY[0][1] / seconds)
             parts.append(
-                f'<text x="{_fmt(cx + 18)}" y="{cy + 7}" class="sans value">{value}'
-                f'<tspan class="note" font-weight="400" dx="10">· about {ratio:,.0f}× less waiting</tspan></text>'
+                f'<text x="{_fmt(cx + 16)}" y="{cy + 6}" class="sans value">{value}'
+                f'<tspan class="note" dx="8">· about {ratio:,.0f}× less waiting</tspan></text>'
             )
         else:
             parts.append(
-                f'<text x="{_fmt(cx + 18)}" y="{cy + 7}" class="sans value">{value}</text>'
+                f'<text x="{_fmt(cx + 16)}" y="{cy + 6}" class="sans value">{value}</text>'
             )
     title = "Instant Notes, wait after you stop talking: local Whisper on CPU 79 s, Groq Whisper batch 787 ms, streamed during recording 78 ms."
     return _svg(w, h, title, _chart_style(p), "\n".join(parts))
@@ -251,8 +258,8 @@ def _bar(x0: float, y: float, length: float, thick: float, fill: str) -> str:
 
 
 def tests_chart(p: dict[str, str]) -> str:
-    w, h = 960, 290
-    x0, x1, domain = 170, 900, 35_000
+    w, h = 600, 300
+    x0, x1, domain = 100, 520, 35_000
 
     _check_domain([TEST_LINES, SOURCE_LINES], 0, domain, "exp02-tests")
 
@@ -262,36 +269,35 @@ def tests_chart(p: dict[str, str]) -> str:
     ratio = TEST_LINES / SOURCE_LINES
     parts = [_card(p, w, h)]
     parts.append(
-        '<text x="40" y="62" class="sans title">More test code than product code</text>'
+        '<text x="28" y="48" class="sans title">More test code than product code</text>'
     )
     parts.append(
-        f'<text x="40" y="96" class="sans sub">telegram-remote-claude · lines of Python · {TEST_FUNCTIONS:,} test functions</text>'
-    )
-    parts.append(
-        f'<text x="920" y="66" class="sans hero" text-anchor="end">{ratio:.2f} : 1</text>'
-    )
-    parts.append(
-        '<text x="920" y="96" class="sans sub" text-anchor="end">tests : source</text>'
+        '<text x="28" y="76" class="sans sub">telegram-remote-claude · lines of Python</text>'
     )
     for v in range(0, 30_001, 10_000):
         gx = _fmt(x0 + length(v))
         parts.append(
-            f'<line x1="{gx}" y1="124" x2="{gx}" y2="226" stroke="{p["grid"]}" stroke-width="1"/>'
+            f'<line x1="{gx}" y1="92" x2="{gx}" y2="178" stroke="{p["grid"]}" stroke-width="1"/>'
         )
         parts.append(
-            f'<text x="{gx}" y="254" class="mono tick" text-anchor="middle">{v:,}</text>'
+            f'<text x="{gx}" y="202" class="mono tick" text-anchor="middle">{v:,}</text>'
         )
     for i, (row, value, fill) in enumerate(
         [("Tests", TEST_LINES, p["accent"]), ("Source", SOURCE_LINES, p["muted"])]
     ):
-        y = 140 + i * 48
+        y = 100 + i * 44
+        parts.append(f'<text x="28" y="{y + 17}" class="sans row">{row}</text>')
+        parts.append(_bar(x0, y, length(value), 22, fill))
         parts.append(
-            f'<text x="150" y="{y + 19}" class="sans row" text-anchor="end">{row}</text>'
+            f'<text x="{_fmt(x0 + length(value) + 12)}" y="{y + 17}" class="sans value">{value:,}</text>'
         )
-        parts.append(_bar(x0, y, length(value), 24, fill))
-        parts.append(
-            f'<text x="{_fmt(x0 + length(value) + 12)}" y="{y + 19}" class="sans value">{value:,}</text>'
-        )
+    parts.append(f'<text x="28" y="264" class="sans hero">{ratio:.2f} : 1</text>')
+    parts.append(
+        '<text x="222" y="244" class="sans caption">lines of tests per line of source</text>'
+    )
+    parts.append(
+        f'<text x="222" y="268" class="sans caption">{TEST_FUNCTIONS:,} test functions</text>'
+    )
     title = f"telegram-remote-claude: {TEST_LINES:,} lines of tests against {SOURCE_LINES:,} lines of source, a {ratio:.2f} to 1 ratio, {TEST_FUNCTIONS:,} test functions."
     return _svg(w, h, title, _chart_style(p), "\n".join(parts))
 

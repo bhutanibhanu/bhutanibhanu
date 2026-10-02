@@ -1,37 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" width="960" height="290" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" role="img" aria-labelledby="t">
 <title id="t">telegram-remote-claude: 31,849 lines of tests against 21,898 lines of source, a 1.45 to 1 ratio, 1,509 test functions.</title>
 <style>
 .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
 .serif { font-family: Georgia, "Times New Roman", Times, serif; }
 .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
-.title { font-size: 32px; font-weight: 600; fill: #1d2433; }
-.sub { font-size: 20px; fill: #575d6b; }
-.row { font-size: 21px; fill: #1d2433; }
-.tick { font-size: 17px; fill: #575d6b; font-variant-numeric: tabular-nums; }
-.value { font-size: 21px; font-weight: 600; fill: #1d2433; }
-.note { font-size: 19px; fill: #575d6b; }
-.hero { font-size: 48px; font-weight: 600; fill: #1d2433; }
+.title { font-size: 28px; font-weight: 600; fill: #1d2433; }
+.sub { font-size: 17px; fill: #575d6b; }
+.row { font-size: 18px; fill: #1d2433; }
+.tick { font-size: 16px; fill: #575d6b; font-variant-numeric: tabular-nums; }
+.value { font-size: 19px; font-weight: 600; fill: #1d2433; }
+.note { font-size: 18px; font-weight: 400; fill: #575d6b; }
+.hero { font-size: 40px; font-weight: 600; fill: #1d2433; }
+.caption { font-size: 17px; fill: #575d6b; }
 </style>
-<rect width="960" height="290" rx="14" fill="#fbf8f1"/>
-<rect x="0.75" y="0.75" width="958.5" height="288.5" rx="13.25" fill="none" stroke="#d9d2c3" stroke-width="1.5"/>
-<rect x="18" y="-6" width="92" height="26" fill="#e8dcb5" opacity="0.8" transform="rotate(-8 64 7)"/>
-<rect x="850" y="-6" width="92" height="26" fill="#e8dcb5" opacity="0.8" transform="rotate(7 896 7)"/>
-<text x="40" y="62" class="sans title">More test code than product code</text>
-<text x="40" y="96" class="sans sub">telegram-remote-claude · lines of Python · 1,509 test functions</text>
-<text x="920" y="66" class="sans hero" text-anchor="end">1.45 : 1</text>
-<text x="920" y="96" class="sans sub" text-anchor="end">tests : source</text>
-<line x1="170" y1="124" x2="170" y2="226" stroke="#e8e1d1" stroke-width="1"/>
-<text x="170" y="254" class="mono tick" text-anchor="middle">0</text>
-<line x1="378.6" y1="124" x2="378.6" y2="226" stroke="#e8e1d1" stroke-width="1"/>
-<text x="378.6" y="254" class="mono tick" text-anchor="middle">10,000</text>
-<line x1="587.1" y1="124" x2="587.1" y2="226" stroke="#e8e1d1" stroke-width="1"/>
-<text x="587.1" y="254" class="mono tick" text-anchor="middle">20,000</text>
-<line x1="795.7" y1="124" x2="795.7" y2="226" stroke="#e8e1d1" stroke-width="1"/>
-<text x="795.7" y="254" class="mono tick" text-anchor="middle">30,000</text>
-<text x="150" y="159" class="sans row" text-anchor="end">Tests</text>
-<path d="M170 140 H830.3 Q834.3 140 834.3 144 V160 Q834.3 164 830.3 164 H170 Z" fill="#2a5bd7"/>
-<text x="846.3" y="159" class="sans value">31,849</text>
-<text x="150" y="207" class="sans row" text-anchor="end">Source</text>
-<path d="M170 188 H622.7 Q626.7 188 626.7 192 V208 Q626.7 212 622.7 212 H170 Z" fill="#8c8678"/>
-<text x="638.7" y="207" class="sans value">21,898</text>
+<rect width="600" height="300" rx="14" fill="#fbf8f1"/>
+<rect x="0.75" y="0.75" width="598.5" height="298.5" rx="13.25" fill="none" stroke="#d9d2c3" stroke-width="1.5"/>
+<rect x="16" y="-6" width="74" height="22" fill="#e8dcb5" opacity="0.8" transform="rotate(-8 53 5)"/>
+<rect x="510" y="-6" width="74" height="22" fill="#e8dcb5" opacity="0.8" transform="rotate(7 547 5)"/>
+<text x="28" y="48" class="sans title">More test code than product code</text>
+<text x="28" y="76" class="sans sub">telegram-remote-claude · lines of Python</text>
+<line x1="100" y1="92" x2="100" y2="178" stroke="#e8e1d1" stroke-width="1"/>
+<text x="100" y="202" class="mono tick" text-anchor="middle">0</text>
+<line x1="220" y1="92" x2="220" y2="178" stroke="#e8e1d1" stroke-width="1"/>
+<text x="220" y="202" class="mono tick" text-anchor="middle">10,000</text>
+<line x1="340" y1="92" x2="340" y2="178" stroke="#e8e1d1" stroke-width="1"/>
+<text x="340" y="202" class="mono tick" text-anchor="middle">20,000</text>
+<line x1="460" y1="92" x2="460" y2="178" stroke="#e8e1d1" stroke-width="1"/>
+<text x="460" y="202" class="mono tick" text-anchor="middle">30,000</text>
+<text x="28" y="117" class="sans row">Tests</text>
+<path d="M100 100 H478.2 Q482.2 100 482.2 104 V118 Q482.2 122 478.2 122 H100 Z" fill="#2a5bd7"/>
+<text x="494.2" y="117" class="sans value">31,849</text>
+<text x="28" y="161" class="sans row">Source</text>
+<path d="M100 144 H358.8 Q362.8 144 362.8 148 V162 Q362.8 166 358.8 166 H100 Z" fill="#8c8678"/>
+<text x="374.8" y="161" class="sans value">21,898</text>
+<text x="28" y="264" class="sans hero">1.45 : 1</text>
+<text x="222" y="244" class="sans caption">lines of tests per line of source</text>
+<text x="222" y="268" class="sans caption">1,509 test functions</text>
 </svg>

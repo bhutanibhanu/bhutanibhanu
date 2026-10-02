@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/cover-dark.svg">
-  <img src="assets/cover-light.svg" width="100%" alt="Lab notebook cover for Bhanu Pratap, M.S. Artificial Intelligence at Northeastern University, stamped open to roles from January 2027.">
+  <img src="assets/cover-light.svg" width="100%" alt="Lab notebook cover for Bhanu Pratap, M.S. Artificial Intelligence at Northeastern University, graduating December 2026, stamped open to roles from January 2027.">
 </picture>
 
 I'm finishing an M.S. in Artificial Intelligence at Northeastern University (Khoury College, Roux Institute) in December 2026, and I'm looking for ML and AI engineering roles that start in January 2027. You can reach me at [pratap.b@northeastern.edu](mailto:pratap.b@northeastern.edu) or on [LinkedIn](https://www.linkedin.com/in/bhanu-pratap24).
@@ -42,7 +42,7 @@ Also in here: [on the bench](#on-the-bench) · [field notes](#field-notes) · [m
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/exp01-latency-dark.svg">
-  <img src="assets/exp01-latency-light.svg" width="100%" alt="Chart of the wait after you stop talking, on a log scale: local Whisper on CPU 79 s, Groq Whisper in batch 787 ms, streamed during recording 78 ms, about 1,000 times less waiting.">
+  <img src="assets/exp01-latency-light.svg" width="640" alt="Chart of the wait after you stop talking, on a log scale: local Whisper on CPU 79 s, Groq Whisper in batch 787 ms, streamed during recording 78 ms, about 1,000 times less waiting.">
 </picture>
 
 <sub>Fig. 1. Source: <a href="https://github.com/bhutanibhanu/instant-notes/blob/main/docs/benchmarks/tuning-summary.md">docs/benchmarks/tuning-summary.md</a> in the repo.</sub>
@@ -73,7 +73,7 @@ Also in here: [on the bench](#on-the-bench) · [field notes](#field-notes) · [m
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/exp02-tests-dark.svg">
-  <img src="assets/exp02-tests-light.svg" width="100%" alt="Bar chart of lines of Python in telegram-remote-claude: 31,849 lines of tests against 21,898 lines of source, a 1.45 to 1 ratio, with 1,509 test functions.">
+  <img src="assets/exp02-tests-light.svg" width="640" alt="Bar chart of lines of Python in telegram-remote-claude: 31,849 lines of tests against 21,898 lines of source, a 1.45 to 1 ratio, with 1,509 test functions.">
 </picture>
 
 <sub>Fig. 2. Line counts of the Python source and <a href="https://github.com/bhutanibhanu/telegram-remote-claude/tree/main/tests">tests</a>.</sub>
