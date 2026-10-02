@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" width="960" height="290" role="img" aria-labelledby="t">
+<title id="t">telegram-remote-claude: 31,849 lines of tests against 21,898 lines of source, a 1.45 to 1 ratio, 1,509 test functions.</title>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.serif { font-family: Georgia, "Times New Roman", Times, serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.title { font-size: 32px; font-weight: 600; fill: #e8ebf0; }
+.sub { font-size: 20px; fill: #a9b0bc; }
+.row { font-size: 21px; fill: #e8ebf0; }
+.tick { font-size: 17px; fill: #a9b0bc; font-variant-numeric: tabular-nums; }
+.value { font-size: 21px; font-weight: 600; fill: #e8ebf0; }
+.note { font-size: 19px; fill: #a9b0bc; }
+.hero { font-size: 48px; font-weight: 600; fill: #e8ebf0; }
+</style>
+<rect width="960" height="290" rx="14" fill="#12161d"/>
+<rect x="0.75" y="0.75" width="958.5" height="288.5" rx="13.25" fill="none" stroke="#2a313c" stroke-width="1.5"/>
+<rect x="18" y="-6" width="92" height="26" fill="#2f3540" opacity="0.8" transform="rotate(-8 64 7)"/>
+<rect x="850" y="-6" width="92" height="26" fill="#2f3540" opacity="0.8" transform="rotate(7 896 7)"/>
+<text x="40" y="62" class="sans title">More test code than product code</text>
+<text x="40" y="96" class="sans sub">telegram-remote-claude · lines of Python · 1,509 test functions</text>
+<text x="920" y="66" class="sans hero" text-anchor="end">1.45 : 1</text>
+<text x="920" y="96" class="sans sub" text-anchor="end">tests : source</text>
+<line x1="170" y1="124" x2="170" y2="226" stroke="#1f2631" stroke-width="1"/>
+<text x="170" y="254" class="mono tick" text-anchor="middle">0</text>
+<line x1="378.6" y1="124" x2="378.6" y2="226" stroke="#1f2631" stroke-width="1"/>
+<text x="378.6" y="254" class="mono tick" text-anchor="middle">10,000</text>
+<line x1="587.1" y1="124" x2="587.1" y2="226" stroke="#1f2631" stroke-width="1"/>
+<text x="587.1" y="254" class="mono tick" text-anchor="middle">20,000</text>
+<line x1="795.7" y1="124" x2="795.7" y2="226" stroke="#1f2631" stroke-width="1"/>
+<text x="795.7" y="254" class="mono tick" text-anchor="middle">30,000</text>
+<text x="150" y="159" class="sans row" text-anchor="end">Tests</text>
+<path d="M170 140 H830.3 Q834.3 140 834.3 144 V160 Q834.3 164 830.3 164 H170 Z" fill="#3987e5"/>
+<text x="846.3" y="159" class="sans value">31,849</text>
+<text x="150" y="207" class="sans row" text-anchor="end">Source</text>
+<path d="M170 188 H622.7 Q626.7 188 626.7 192 V208 Q626.7 212 622.7 212 H170 Z" fill="#646b77"/>
+<text x="638.7" y="207" class="sans value">21,898</text>
+</svg>
